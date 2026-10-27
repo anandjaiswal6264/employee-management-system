@@ -122,3 +122,11 @@ def delete_employee(employee_id: int, db: DBSession):
     db.commit()
 
     return {"message": "Employee deleted successfully"}
+
+
+if __name__ == "__main__":
+    import os
+    import uvicorn
+
+    port = int(os.getenv("PORT", 8000))
+    uvicorn.run("main:app", host="0.0.0.0", port=port, reload=False)
